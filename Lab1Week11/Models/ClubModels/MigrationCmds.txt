@@ -2,13 +2,14 @@
 
 enable-migrations -ContextTypeName Lab1Week11.Models.ClubModel.ClubContext -MigrationsDirectory Migrations\ClubMigrations
 
+//add migration for application user
 // for application db context
-add-migration -ConfigurationTypeName Lab1Week11.Migrations.ApplicationUsers.Configuration
+add-migration -ConfigurationTypeName Lab1Week11.Migrations.ApplicationUsersMigrations.Configuration
+//update database for application user
+update-database -ConfigurationTypeName Lab1Week11.Migrations.ApplicationUsersMigrations.Configuration
 
-update-database -ConfigurationTypeName Lab1Week11.Migrations.ApplicationUsers.Configuration
 
-
-// For club Context
-add-migration -ConfigurationTypeName Lab1Week11.Migrations.ClubContext.Configuration
-
-update-database -ConfigurationTypeName Lab1Week11.Migrations.ClubContext.Configuration
+// add migration For club Context
+add-migration -ConfigurationTypeName Lab1Week11.Migrations.ClubMigrations.Configuration
+// update databse for club context 
+update-database -ConfigurationTypeName Lab1Week11.Migrations.ClubMigrations.Configuration
